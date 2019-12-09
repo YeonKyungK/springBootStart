@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+<h1>Sign Up Page</h1>
+<hr>
+
+<form th:action="@{/user/signup}" method="post">
+    <input type="text" name="email" placeholder="input your email">
+    <input type="password" name="password" placeholder="input your password">
+    <button type="submit">가입하기</button>
+</form>
+</body>
+</html>
+

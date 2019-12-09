@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In Success</title>
+</head>
+<body>
+<h1>Sign In Success</h1>
+<hr>
+<p>
+    <span sec:authentication="name"></span>! Welcome~!
+</p>
+<a th:href="@{'/'}">Go to Main</a>
+</body>
+</html>

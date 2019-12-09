@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"  xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+    <h1>Main Page</h1>
+    <hr>
+    <a sec:authorize="isAnonymous()" th:href="@{/user/login}">Sign In</a>
+    <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">LogOut</a>
+    <a sec:authorize="isAnonymous()" th:href="@{/user/signup}">Sign Up</a>
+    <a sec:authorize="hasRole('ROLE_MEMBER')" th:href="@{/user/info}">MyPage</a>
+    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">Admin</a>
+</body>
+</html>
