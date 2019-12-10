@@ -44,7 +44,7 @@ public class MemberService implements UserDetailsService {
         List<GrantedAuthority> authorities = new ArrayList<>();
 
         if (("admin@example.com").equals(userEmail)) {
-            //룰을 부여하
+            //룰을 부여함
             authorities.add(new SimpleGrantedAuthority(Role.ADMIN.getValue()));
         } else {
             authorities.add(new SimpleGrantedAuthority(Role.MEMBER.getValue()));

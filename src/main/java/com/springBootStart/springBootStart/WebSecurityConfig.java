@@ -1,6 +1,7 @@
 package com.springBootStart.springBootStart;
 
 import com.springBootStart.springBootStart.service.MemberService;
+import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -19,6 +20,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 //spring security 쓰려면 아래 어노테이션 넣어야
 @EnableWebSecurity
+@AllArgsConstructor
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private MemberService memberService;
 
@@ -39,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/admin/**").hasRole("ADMIN")
                     .antMatchers("/user/myinfo").hasRole("MEMBER")
-                    .antMatchers("/", "/index").permitAll()
+                    .antMatchers("/**").permitAll()
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
